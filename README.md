@@ -27,6 +27,6 @@ Password generator
 
 # How to build on Linux
 
-1. install dependencies: pkg-config gtk+-2.0 gdk-pixbuf-2.0 openssl
+1. install dependencies: pkg-config libgtk2.0-dev libgdk-pixbuf2.0-dev libssl-dev
 
 2. compile: make
