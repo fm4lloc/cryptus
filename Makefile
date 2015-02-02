@@ -16,7 +16,7 @@ LIBS		= $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 openssl)
 DEFINES 	= $(INCLUDES) $(DEFS)
 CFLAGS  	= $(DEFINES)
 
-SRC			= $(shell find ./src -type f -name "*.c")
+SRC		= $(shell find ./src -type f -name "*.c")
 HEADERS		= $(shell find ./src -type f -name "*.h")
 OBJS		= $(SRC:.c=.o)
 
