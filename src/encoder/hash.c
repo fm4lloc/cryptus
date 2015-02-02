@@ -43,9 +43,9 @@ unsigned short int len_hash_ripemd160 ()
 static void human_readable (char *dest, const unsigned char *md, const int length)
 {
 	int i;
-
-    for (i = 0; i < length; i++)
-    	sprintf (dest + i*2, "%02x", (unsigned int) md[i]);
+	
+	for (i = 0; i < length; i++)
+		sprintf (dest + i*2, "%02x", (unsigned int) md[i]);
 }
 
 void hash_md5 (char *dest, const char *data)
@@ -53,23 +53,23 @@ void hash_md5 (char *dest, const char *data)
 	MD5_CTX c;
 	unsigned char md[MD5_DIGEST_LENGTH];
 
-    MD5_Init   (&c);
+	MD5_Init   (&c);
 	MD5_Update (&c, data, strlen (data));
-    MD5_Final  (md, &c);
-
-    human_readable (dest, md, MD5_DIGEST_LENGTH);
+	MD5_Final  (md, &c);
+	
+	human_readable (dest, md, MD5_DIGEST_LENGTH);
 }
 
 void hash_sha256 (char *dest, const char *data)
 {
 	SHA256_CTX c;
 	unsigned char md[SHA256_DIGEST_LENGTH];
-
-    SHA256_Init   (&c);
-    SHA256_Update (&c, data, strlen (data));
-    SHA256_Final  (md, &c);
-
-    human_readable (dest, md, SHA256_DIGEST_LENGTH);
+	
+	SHA256_Init   (&c);
+	SHA256_Update (&c, data, strlen (data));
+	SHA256_Final  (md, &c);
+	
+	human_readable (dest, md, SHA256_DIGEST_LENGTH);
 }
 
 void hash_ripemd160 (char *dest, const char *data)
