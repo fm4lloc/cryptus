@@ -26,7 +26,7 @@
 
 static const GtkActionEntry entries[] =
 {
-	{ "FileMenu", NULL, "_File" }		/* name, stock id, label */
+	{ "FileMenu", NULL, "_File" },		/* name, stock id, label */
 	{ "PreferencesMenu", NULL, "_Preferences" },
 	{ "HelpMenu", NULL, "_Help" },
 
