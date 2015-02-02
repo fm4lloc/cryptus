@@ -58,28 +58,28 @@ void *xcalloc (size_t nmemb, size_t size)
 /* Cryptus easy allocation */
 char *halloc (const char *text, const char *delim, hcode code)
 {
-	void *p;								/* pointer to the allocate memory */
-	size_t l = 0;							/* length to allocate */
-	size_t lt = text  ? strlen (text)  : 0;	/* length text 		  */
-	size_t ld = delim ? strlen (delim) : 0; /* length delimiter   */
+	void *p;				/* pointer to the allocate memory */
+	size_t l = 0;				/* length to allocate */
+	size_t lt = text  ? strlen (text)  : 0;	/* length text 	*/
+	size_t ld = delim ? strlen (delim) : 0; /* length delimiter */
 
 	switch (code)
 	{
-		case HEX_ENCODE: 	 l = len_ascii_to_hex (lt, ld);	break;
-		case HEX_DECODE: 	 l = len_hex_to_ascii (lt, ld);	break;
-		case DEC_ENCODE: 	 l = len_ascii_to_dec (lt, ld);	break;
-		case DEC_DECODE: 	 l = len_dec_to_ascii (lt, ld);	break;
-		case BASE64_ENCODE:  l = Base64encode_len (lt);		break;
-		case BASE64_DECODE:  l = Base64decode_len (text);	break;
-		case HASH_MD5: 		 l = len_hash_md5 ();			break;
-		case HASH_SHA256: 	 l = len_hash_sha256 ();		break;
-		case HASH_RIPEMD160: l = len_hash_ripemd160 ();		break;
+		case HEX_ENCODE:	l = len_ascii_to_hex (lt, ld);	break;
+		case HEX_DECODE:	l = len_hex_to_ascii (lt, ld);	break;
+		case DEC_ENCODE:	l = len_ascii_to_dec (lt, ld);	break;
+		case DEC_DECODE:	l = len_dec_to_ascii (lt, ld);	break;
+		case BASE64_ENCODE	l = Base64encode_len (lt);	break;
+		case BASE64_DECODE	l = Base64decode_len (text);	break;
+		case HASH_MD5: 		l = len_hash_md5 ();		break;
+		case HASH_SHA256	l = len_hash_sha256 ();		break;
+		case HASH_RIPEMD160	l = len_hash_ripemd160 ();	break;
 		default:
 			break;
 	}
 
 #if DEBUG
-		fprintf (stderr, "[+] Allocate: %ld\n", (l * sizeof(char)));
+	fprintf (stderr, "[+] Allocate: %ld\n", (l * sizeof(char)));
 #endif
 
 	p = (char *) malloc (sizeof (char) * l);
