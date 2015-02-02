@@ -26,14 +26,14 @@
 
 static const GtkActionEntry entries[] =
 {
-	{ "FileMenu", NULL, "_File" },              /* name, stock id, label */
+	{ "FileMenu", NULL, "_File" }		/* name, stock id, label */
 	{ "PreferencesMenu", NULL, "_Preferences" },
 	{ "HelpMenu", NULL, "_Help" },
 
-	{ "Open", GTK_STOCK_OPEN,					/* name, stock id */
-			"_Open", "<control>O",				/* label, accelerator */
-			"Open a file",						/* tooltip */
-	G_CALLBACK (open_cb) },						/* callback */
+	{ "Open", GTK_STOCK_OPEN,		/* name, stock id */
+			"_Open", "<control>O",	/* label, accelerator */
+			"Open a file",		/* tooltip */
+	G_CALLBACK (open_cb) },			/* callback */
 	{ "SaveAs", GTK_STOCK_SAVE,
 			"Save _As...", NULL,
 			"Save to a file",
@@ -84,11 +84,11 @@ GtkWidget *create_menubar (struct window_main_widgets *wm)
 			gtk_ui_manager_get_accel_group (merge));
 
 	/* load menu description from resources */
-    if (!gtk_ui_manager_add_ui_from_string (merge, ui_info, -1, &error))
+	if (!gtk_ui_manager_add_ui_from_string (merge, ui_info, -1, &error))
 	{
-    	g_critical ("%s\n", error->message);
-    	g_clear_error (&error);
-    	return NULL;
+		g_critical ("%s\n", error->message);
+		g_clear_error (&error);
+		return NULL;
 	}
 
     return gtk_ui_manager_get_widget (merge, "/MainMenu");
