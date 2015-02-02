@@ -127,9 +127,6 @@ void hex_to_ascii (char *dest, const char *src, const char *delim)
 	/* Step through conversing the source hex digit pairs */
 	for (i = 0; src[i * 2 + j] != '\0' && src[i * 2 + 1 + j] != '\0'; i++)
 	{
-		//fprintf (stderr, ">>: '%c'\n", src[i - j]);
-		//fprintf (stderr, ">>: '%c'\n", src+i-j);
-
 		if ((memcmp (src+i-j, delim, (size_t) len)) == 0)
 		{
 			fprintf (stderr, "%.*s\n", len, src+i-j);
