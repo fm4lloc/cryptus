@@ -25,12 +25,11 @@ GtkWidget *create_scrolled_window_with_viewport (GtkWidget *widget)
 	GtkWidget *scrolled_window;
 
 	scrolled_window = gtk_scrolled_window_new (NULL, NULL);
-    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
-    		GTK_POLICY_AUTOMATIC,
-    		GTK_POLICY_AUTOMATIC);
+	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
+			GTK_POLICY_AUTOMATIC,
+			GTK_POLICY_AUTOMATIC);
 
-    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_window),
-    		widget);
+    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_window), widget);
 
     return scrolled_window;
 }
