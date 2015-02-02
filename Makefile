@@ -5,8 +5,8 @@
 #-----------------------------------------------------------------------
 # EDIT HERE
 #-----------------------------------------------------------------------
-RM			= /bin/rm -f
-CC			= gcc
+RM		= /bin/rm -f
+CC		= gcc
 DEFS		= -O3 -Wall -fmessage-length=0
 PROGNAME	= cryptus
 INCLUDES	= $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 openssl)
