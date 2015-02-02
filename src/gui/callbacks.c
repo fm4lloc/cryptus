@@ -64,10 +64,10 @@ void encode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 		case SPECIAL_ENCODING:	encoded_special (text, idc, wm);	break;
 		case STRAIGHT_ENCODING:	straigtht_encoding (text, idc, wm);	break;
 		case IE_SPECIFIC:	ie_specific (text, idc, wm);		break;
-		case IP_SPECIFIC: 											break;
+		case IP_SPECIFIC: 						break;
 		case HASH:		hash (text, idc, wm);			break;
-		case OTHERS:												break;
-		case SPECIAL:												break;
+		case OTHERS:							break;
+		case SPECIAL:							break;
 		default:
 			break;
 	}
@@ -109,7 +109,7 @@ void decode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 
 	switch (idc[0])
 	{
-		case URL_URI: 		decode_url_uri (text, idc, wm);		break;
+		case URL_URI: 		decode_url_uri (text, idc, wm);	break;
 		case HTML_ENTITY: 	break;
 		case SPECIAL_ENCODING:	break;
 		case STRAIGHT_ENCODING:	break;
