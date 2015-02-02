@@ -33,7 +33,7 @@ struct window_main_widgets
 	GtkWidget	*menubar1;
 	GtkWidget	*vpaned1;
 	GtkWidget	*hpaned1;
-	GtkWidge	*scrolled1;
+	GtkWidget	*scrolled1;
 	GtkWidget	*scrolled2;
 	GtkWidget	*scrolled3;
 	GtkWidget	*treeview1;
