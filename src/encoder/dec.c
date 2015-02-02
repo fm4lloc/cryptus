@@ -43,7 +43,7 @@ size_t len_ascii_to_dec (size_t len, size_t delim_len)
  */
 size_t len_dec_to_ascii (int len, int delim_len)
 {
-    return (len / (3 + delim_len)) + 1;
+	return (len / (3 + delim_len)) + 1;
 }
 
 /* ascii_code_to_str ()
@@ -75,22 +75,22 @@ static void inline ascii_code_to_str (uint8_t c, char v[], int *vl)
 {
 	char *p = v;
 	uint8_t shifter = c;
-    static char const digit[] = "0123456789";
+	static char const digit[] = "0123456789";
 
-    *vl = 0; /* decimal length string */
-    do
-    {	/* Move to where representation ends */
-    	++*vl;
-        ++p;
-        shifter /= 10;
-    } while (shifter);
-    *p = '\0';
-
-    do
-    {	/* Move back, inserting digits as u go */
-        *--p = *digit + c % 10;
-        c /= 10;
-    } while (c);
+	*vl = 0; /* decimal length string */
+	do
+	{	/* Move to where representation ends */
+		++*vl;
+		++p;
+		shifter /= 10;
+	} while (shifter);
+	*p = '\0';
+	
+	do
+	{	/* Move back, inserting digits as u go */
+		*--p = *digit + c % 10;
+		c /= 10;
+	} while (c);
 }
 
 void ascii_to_dec (char *dest, const char *src, const char *delim)
