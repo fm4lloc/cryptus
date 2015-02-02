@@ -43,28 +43,28 @@ typedef struct
 
 const GroceryItem list[] =
 {
-	{ ITEM_CATEGORY, 	"URL/URI" 					}, /* 0   */
-		{ ITEM_CHILD, 		"Url(%XX)" 				}, /* 0:0 */
-		{ ITEM_CHILD, 		"Hex(%XX)" 				}, /* 0:1 */
+	{ ITEM_CATEGORY, 	"URL/URI" 				}, /* 0   */
+		{ ITEM_CHILD, 		"Url(%XX)" 			}, /* 0:0 */
+		{ ITEM_CHILD, 		"Hex(%XX)" 			}, /* 0:1 */
 		{ ITEM_CHILD, 		"Unicode(%uUUUU)" 		}, /* 0:2 */
 
 	{ ITEM_CATEGORY, 	"HTML-ENTITY" 				}, /* 1   */
 		{ ITEM_CHILD, 		"Named(&lt)" 			}, /* 1:0 */
 		{ ITEM_CHILD, 		"Decimal(&#DD)" 		}, /* 1:1 */
 		{ ITEM_CHILD, 		"Hex(&#xXX)" 			}, /* 1:2 */
-		{ ITEM_CHILD, 		"Hex long(&#x00XX)" 	}, /* 1:3 */
+		{ ITEM_CHILD, 		"Hex long(&#x00XX)"		}, /* 1:3 */
 
 	{ ITEM_CATEGORY, 	"SPECIAL ENCODING" 			}, /* 2   */
-		{ ITEM_CHILD, 		"JavaScript escaped"	}, /* 2:0 */
+		{ ITEM_CHILD, 		"JavaScript escaped"		}, /* 2:0 */
 		{ ITEM_CHILD, 		"XML escaped" 			}, /* 2:1 */
 
-	{ ITEM_CATEGORY, 	"Straight Encoding" 		}, /* 3	  */
+	{ ITEM_CATEGORY, 	"Straight Encoding"			}, /* 3	  */
 		{ ITEM_CHILD, 		"Decimal(DD)" 			}, /* 3:0 */
-		{ ITEM_CHILD, 		"Hex(XX)" 				}, /* 3:1 */
+		{ ITEM_CHILD, 		"Hex(XX)" 			}, /* 3:1 */
 
 	{ ITEM_CATEGORY, 	"IE Specific"				}, /* 4   */
-		{ ITEM_CHILD, 		"(\\xXX)" 				}, /* 4:0 */
-		{ ITEM_CHILD, 		"(\\x0XX)" 				}, /* 4:1 */
+		{ ITEM_CHILD, 		"(\\xXX)" 			}, /* 4:0 */
+		{ ITEM_CHILD, 		"(\\x0XX)" 			}, /* 4:1 */
 		{ ITEM_CHILD, 		"(\\x00XX)" 			}, /* 4:2 */
 		{ ITEM_CHILD, 		"(\\x000XX)" 			}, /* 4:3 */
 		{ ITEM_CHILD, 		"(\\x0000XX)" 			}, /* 4:4 */
@@ -72,35 +72,35 @@ const GroceryItem list[] =
 		{ ITEM_CHILD, 		"(\\uUUUU)" 			}, /* 4:6 */
 
 	{ ITEM_CATEGORY, 	"IP Specific"				}, /* 5   */
-		{ ITEM_CHILD, 		"Hex Address (IPv4)" 	}, /* 5:0 */
+		{ ITEM_CHILD, 		"Hex Address (IPv4)"		}, /* 5:0 */
 		{ ITEM_CHILD, 		"(Octal (IPv4)" 		}, /* 5:1 */
-		{ ITEM_CHILD, 		"Dword Address (IPv4)" 	}, /* 5:2 */
+		{ ITEM_CHILD, 		"Dword Address (IPv4)"		}, /* 5:2 */
 
-	{ ITEM_CATEGORY, 	"Hash"	}, 					   /* 6   */
-		{ ITEM_CHILD, 		"Base64" 				}, /* 6:0 */
-		{ ITEM_CHILD, 		"MD5" 					}, /* 6:1 */
-		{ ITEM_CHILD, 		"SHA-256" 				}, /* 6:2 */
+	{ ITEM_CATEGORY, 	"Hash"					},  /* 6   */
+		{ ITEM_CHILD, 		"Base64" 			}, /* 6:0 */
+		{ ITEM_CHILD, 		"MD5" 				}, /* 6:1 */
+		{ ITEM_CHILD, 		"SHA-256" 			}, /* 6:2 */
 		{ ITEM_CHILD, 		"RIPEMD160" 			}, /* 6:3 */
 
-	{ ITEM_CATEGORY, 	"Others"					}, /* 7   */
-		{ ITEM_CHILD, 		"Split (delimiter)" 	}, /* 7:0 */
+	{ ITEM_CATEGORY, 	"Others"				}, /* 7   */
+		{ ITEM_CHILD, 		"Split (delimiter)"		}, /* 7:0 */
 		{ ITEM_CHILD, 		"Split (Space)" 		}, /* 7:1 */
 		{ ITEM_CHILD, 		"Reverse string" 		}, /* 7:2 */
-		{ ITEM_CHILD, 		"Join" 					}, /* 7:3 */
-		{ ITEM_CHILD, 		"International Morse" 	}, /* 7:4 */
-		{ ITEM_CHILD, 		"13375p34k - Simple" 	}, /* 7:5 */
-		{ ITEM_CHILD, 		"13375p34k - Advanced" 	}, /* 7:6 */
-		{ ITEM_CHILD, 		"Binary" 				}, /* 7:7 */
+		{ ITEM_CHILD, 		"Join" 				}, /* 7:3 */
+		{ ITEM_CHILD, 		"International Morse"		}, /* 7:4 */
+		{ ITEM_CHILD, 		"13375p34k - Simple"		}, /* 7:5 */
+		{ ITEM_CHILD, 		"13375p34k - Advanced"		}, /* 7:6 */
+		{ ITEM_CHILD, 		"Binary" 			}, /* 7:7 */
 		{ ITEM_CHILD, 		"BCD (int)" 			}, /* 7:8 */
-		{ ITEM_CHILD, 		"Replace" 				}, /* 7:9 */
-		{ ITEM_CHILD, 		"Up Case" 				}, /* 7:10*/
-		{ ITEM_CHILD, 		"Low Case" 				}, /* 7:11*/
+		{ ITEM_CHILD, 		"Replace" 			}, /* 7:9 */
+		{ ITEM_CHILD, 		"Up Case" 			}, /* 7:10*/
+		{ ITEM_CHILD, 		"Low Case" 			}, /* 7:11*/
 		{ ITEM_CHILD, 		"String length" 		}, /* 7:12*/
 
-	{ ITEM_CATEGORY, 		"Special"				}, /* 8   */
-		{ ITEM_CHILD, 		"Password generator"	}, /* 8:0 */
+	{ ITEM_CATEGORY, 		"Special"			}, /* 8   */
+		{ ITEM_CHILD, 		"Password generator"		}, /* 8:0 */
 
-	{ ITEM_CATEGORY,		NULL 					}, /* NULL */
+	{ ITEM_CATEGORY,		NULL 				}, /* NULL */
 };
 
 static void setup_tree_view (GtkWidget *treeview)
