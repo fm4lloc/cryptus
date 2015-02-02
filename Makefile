@@ -1,5 +1,5 @@
 #
-# Simple for cryptus
+# Simple generic Makefile for cryptus
 #
 
 #-----------------------------------------------------------------------
