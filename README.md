@@ -24,3 +24,9 @@ Available tools:
 
 **Special**
 Password generator
+
+# How to build on Linux
+
+1. install dependencies: pkg-config gtk+-2.0 gdk-pixbuf-2.0 openssl
+
+2. compile: make
