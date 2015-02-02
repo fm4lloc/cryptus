@@ -25,8 +25,8 @@ Available tools:
 **Special**
 Password generator
 
-# How to build on Linux
+# How to build on Debian, Ubuntu and varied.
 
-1. install dependencies: pkg-config libgtk2.0-dev libgdk-pixbuf2.0-dev libssl-dev
+1. install dependencies: build-essential pkg-config libgtk2.0-dev libgdk-pixbuf2.0-dev libssl-dev
 
 2. compile: make
