@@ -134,38 +134,38 @@ void decode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 static GtkResponseType check_if_overwriting_file (GtkWidget *window_parent,
 		const gchar *filename)
 {
-  if (*filename && g_file_test (filename, G_FILE_TEST_EXISTS))
-  {
-	GtkWidget *dialog;
-	gboolean resp;
-	gchar *filename_in_utf8 = g_filename_to_utf8 (filename, -1,
-						  NULL, NULL, NULL);
-
-	const gchar hint[] =
-			"Note that all information in the existing file "
-			"will be lost permanently if you choose to overwrite it.";
-
-	const gchar message_format_string[] =
-			"File named '%s' already exists."
-			"\nDo you want to overwrite it with the one you are saving?";
-
-	dialog = gtk_message_dialog_new (GTK_WINDOW (window_parent),
-			GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-			GTK_MESSAGE_WARNING,
-			GTK_BUTTONS_OK_CANCEL,
-			hint);
-
-	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-			message_format_string, filename_in_utf8);
-
-	g_free (filename_in_utf8);
-
-	resp = gtk_dialog_run (GTK_DIALOG (dialog));
-	gtk_widget_destroy (dialog);
-
-	return resp;
-  }
+	if (*filename && g_file_test (filename, G_FILE_TEST_EXISTS))
+	{
+		GtkWidget *dialog;
+		gboolean resp;
+		gchar *filename_in_utf8 = g_filename_to_utf8 (filename, -1,
+				NULL, NULL, NULL);
+	
+		const gchar hint[] =
+				"Note that all information in the existing file "
+				"will be lost permanently if you choose to overwrite it.";
+	
+		const gchar message_format_string[] =
+				"File named '%s' already exists."
+				"\nDo you want to overwrite it with the one you are saving?";
+	
+		dialog = gtk_message_dialog_new (GTK_WINDOW (window_parent),
+				GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+				GTK_MESSAGE_WARNING,
+				GTK_BUTTONS_OK_CANCEL,
+				hint);
+	
+		gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
+		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+				message_format_string, filename_in_utf8);
+	
+		g_free (filename_in_utf8);
+	
+		resp = gtk_dialog_run (GTK_DIALOG (dialog));
+		gtk_widget_destroy (dialog);
+	
+		return resp;
+	}
 
   return GTK_RESPONSE_CANCEL;
 }
