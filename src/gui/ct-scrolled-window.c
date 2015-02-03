@@ -29,7 +29,7 @@ GtkWidget *create_scrolled_window_with_viewport (GtkWidget *widget)
 			GTK_POLICY_AUTOMATIC,
 			GTK_POLICY_AUTOMATIC);
 
-    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_window), widget);
+	gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_window), widget);
 
     return scrolled_window;
 }
