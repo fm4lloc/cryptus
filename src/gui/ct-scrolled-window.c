@@ -31,5 +31,5 @@ GtkWidget *create_scrolled_window_with_viewport (GtkWidget *widget)
 
 	gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_window), widget);
 
-    return scrolled_window;
+	return scrolled_window;
 }
