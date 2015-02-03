@@ -218,9 +218,9 @@ void open_cb (GtkAction *action, gpointer user_data)
 
 void save_as_cb (GtkAction *action, gpointer user_data)
 {
-	GtkWidge			*dialog;
+	GtkWidget			*dialog;
 	GtkResponseType			resp;
-	gcha				*filename	= NULL;
+	gchar				*filename	= NULL;
 	gchar				*text		= NULL;
 	GError				*error		= NULL;
 	struct window_main_widget	*wm;
@@ -228,11 +228,11 @@ void save_as_cb (GtkAction *action, gpointer user_data)
 	wm = (struct window_main_widgets *) user_data;
 
 	dialog = gtk_file_chooser_dialog_new ("Save File As ...",
-			GTK_WINDOW(wm->window1),
-			GTK_FILE_CHOOSER_ACTION_SAVE,
-			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			GTK_STOCK_SAVE, GTK_RESPONSE_OK,
-			NULL);
+				GTK_WINDOW(wm->window1),
+				GTK_FILE_CHOOSER_ACTION_SAVE,
+				GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+				GTK_STOCK_SAVE, GTK_RESPONSE_OK,
+				NULL);
 
 	gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
