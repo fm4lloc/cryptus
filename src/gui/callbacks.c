@@ -14,7 +14,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  *
- * Author: Fernando Magalhães (Fm4lloc) <fm4lloc@gmail.com>
+ * Author: Fernando Magalhães (Fm4lloc) <fernando.magalhaes12@gmail.com>
  *
  */
 
@@ -59,15 +59,15 @@ void encode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 
 	switch (idc[0])
 	{
-		case URL_URI: 		encode_url_uri (text, idc, wm);		break;
-		case HTML_ENTITY: 	encode_html_entity (text, idc, wm);	break;
+		case URL_URI: 			encode_url_uri (text, idc, wm);		break;
+		case HTML_ENTITY: 		encode_html_entity (text, idc, wm);	break;
 		case SPECIAL_ENCODING:	encoded_special (text, idc, wm);	break;
 		case STRAIGHT_ENCODING:	straigtht_encoding (text, idc, wm);	break;
-		case IE_SPECIFIC:	ie_specific (text, idc, wm);		break;
-		case IP_SPECIFIC: 						break;
-		case HASH:		hash (text, idc, wm);			break;
-		case OTHERS:							break;
-		case SPECIAL:							break;
+		case IE_SPECIFIC:		ie_specific (text, idc, wm);		break;
+		case IP_SPECIFIC: 											break;
+		case HASH:				hash (text, idc, wm);				break;
+		case OTHERS:												break;
+		case SPECIAL:												break;
 		default:
 			break;
 	}
@@ -109,15 +109,15 @@ void decode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 
 	switch (idc[0])
 	{
-		case URL_URI: 		decode_url_uri (text, idc, wm);	break;
-		case HTML_ENTITY: 	break;
+		case URL_URI: 			decode_url_uri (text, idc, wm);		break;
+		case HTML_ENTITY: 		break;
 		case SPECIAL_ENCODING:	break;
 		case STRAIGHT_ENCODING:	break;
-		case IE_SPECIFIC:	break;
-		case IP_SPECIFIC: 	break;
-		case HASH:		break;
-		case OTHERS:		break;
-		case SPECIAL:		break;
+		case IE_SPECIFIC:		break;
+		case IP_SPECIFIC: 		break;
+		case HASH:				break;
+		case OTHERS:			break;
+		case SPECIAL:			break;
 		default:
 			break;
 	}
@@ -134,38 +134,38 @@ void decode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 static GtkResponseType check_if_overwriting_file (GtkWidget *window_parent,
 		const gchar *filename)
 {
-	if (*filename && g_file_test (filename, G_FILE_TEST_EXISTS))
-	{
-		GtkWidget *dialog;
-		gboolean resp;
-		gchar *filename_in_utf8 = g_filename_to_utf8 (filename, -1,
-				NULL, NULL, NULL);
-	
-		const gchar hint[] =
-				"Note that all information in the existing file "
-				"will be lost permanently if you choose to overwrite it.";
-	
-		const gchar message_format_string[] =
-				"File named '%s' already exists."
-				"\nDo you want to overwrite it with the one you are saving?";
-	
-		dialog = gtk_message_dialog_new (GTK_WINDOW (window_parent),
-				GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_MESSAGE_WARNING,
-				GTK_BUTTONS_OK_CANCEL,
-				hint);
-	
-		gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-				message_format_string, filename_in_utf8);
-	
-		g_free (filename_in_utf8);
-	
-		resp = gtk_dialog_run (GTK_DIALOG (dialog));
-		gtk_widget_destroy (dialog);
-	
-		return resp;
-	}
+  if (*filename && g_file_test (filename, G_FILE_TEST_EXISTS))
+  {
+	GtkWidget *dialog;
+	gboolean resp;
+	gchar *filename_in_utf8 = g_filename_to_utf8 (filename, -1,
+						  NULL, NULL, NULL);
+
+	const gchar hint[] =
+			"Note that all information in the existing file "
+			"will be lost permanently if you choose to overwrite it.";
+
+	const gchar message_format_string[] =
+			"File named '%s' already exists."
+			"\nDo you want to overwrite it with the one you are saving?";
+
+	dialog = gtk_message_dialog_new (GTK_WINDOW (window_parent),
+								   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+								   GTK_MESSAGE_WARNING,
+								   GTK_BUTTONS_OK_CANCEL,
+								   hint);
+
+	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
+	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+			message_format_string, filename_in_utf8);
+
+	g_free (filename_in_utf8);
+
+	resp = gtk_dialog_run (GTK_DIALOG (dialog));
+	gtk_widget_destroy (dialog);
+
+	return resp;
+  }
 
   return GTK_RESPONSE_CANCEL;
 }
@@ -173,21 +173,21 @@ static GtkResponseType check_if_overwriting_file (GtkWidget *window_parent,
 void open_cb (GtkAction *action, gpointer user_data)
 {
 	GtkWidget			*dialog;
-	GtkResponseType			resp;
+	GtkResponseType		resp;
 	gchar 				*filename;
 	gchar 				*content;
-	GtkTextBuffer 			*buffer;
+	GtkTextBuffer 		*buffer;
 	GError 				*error = NULL;
-	struct window_main_widgets 	*wm;
+	struct window_main_widgets *wm;
 
 	wm = (struct window_main_widgets *) user_data;
 
 	dialog = gtk_file_chooser_dialog_new ("Select a file to open",
-			 GTK_WINDOW(wm->window1),
-			 GTK_FILE_CHOOSER_ACTION_OPEN,
-			 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			 GTK_STOCK_OPEN, GTK_RESPONSE_OK,
-			 NULL);
+										 GTK_WINDOW(wm->window1),
+										 GTK_FILE_CHOOSER_ACTION_OPEN,
+										 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+										 GTK_STOCK_OPEN, GTK_RESPONSE_OK,
+										 NULL);
 
 	gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
@@ -218,21 +218,21 @@ void open_cb (GtkAction *action, gpointer user_data)
 
 void save_as_cb (GtkAction *action, gpointer user_data)
 {
-	GtkWidget			*dialog;
-	GtkResponseType			resp;
-	gchar				*filename	= NULL;
-	gchar				*text		= NULL;
-	GError				*error		= NULL;
-	struct window_main_widget	*wm;
+	GtkWidget 		*dialog;
+	GtkResponseType	resp;
+	gchar 			*filename	= NULL;
+	gchar			*text		= NULL;
+	GError			*error		= NULL;
+	struct window_main_widgets *wm;
 
 	wm = (struct window_main_widgets *) user_data;
 
 	dialog = gtk_file_chooser_dialog_new ("Save File As ...",
-				GTK_WINDOW(wm->window1),
-				GTK_FILE_CHOOSER_ACTION_SAVE,
-				GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-				GTK_STOCK_SAVE, GTK_RESPONSE_OK,
-				NULL);
+											GTK_WINDOW(wm->window1),
+											GTK_FILE_CHOOSER_ACTION_SAVE,
+											GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+											GTK_STOCK_SAVE, GTK_RESPONSE_OK,
+											NULL);
 
 	gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
@@ -263,12 +263,12 @@ void about_cb (GtkAction *action, gpointer user_data)
 	GdkPixbuf *logo = pixbuf_new_from_file("img/logo.png");
 
 	const gchar *authors[] = {
-		"Fernando Magalhães (Fm4lloc) <fm4lloc@gmail.com>",
+		"Fernando Magalhães (Fm4lloc) <fernando.magalhaes12@gmail.com>",
 		NULL
 	};
 
 	const gchar license[] =
-			"Copyright (C) 2014  Fernando Magalhães (Fm4lloc) <fm4lloc@gmail.com>\n"
+			"Copyright (C) 2014  Fernando Magalhães (Fm4lloc) <fernando.magalhaes12@gmail.com>\n"
 			"\n"
 			"This program is free software: you can redistribute it and/or modify\n"
 			"it under the terms of the GNU General Public License as published by\n"
