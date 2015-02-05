@@ -59,15 +59,15 @@ void encode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 
 	switch (idc[0])
 	{
-		case URL_URI: 			encode_url_uri (text, idc, wm);		break;
-		case HTML_ENTITY: 		encode_html_entity (text, idc, wm);	break;
+		case URL_URI: 		encode_url_uri (text, idc, wm);		break;
+		case HTML_ENTITY: 	encode_html_entity (text, idc, wm);	break;
 		case SPECIAL_ENCODING:	encoded_special (text, idc, wm);	break;
 		case STRAIGHT_ENCODING:	straigtht_encoding (text, idc, wm);	break;
-		case IE_SPECIFIC:		ie_specific (text, idc, wm);		break;
-		case IP_SPECIFIC: 											break;
-		case HASH:				hash (text, idc, wm);				break;
-		case OTHERS:												break;
-		case SPECIAL:												break;
+		case IE_SPECIFIC:	ie_specific (text, idc, wm);		break;
+		case IP_SPECIFIC: 						break;
+		case HASH:		hash (text, idc, wm);			break;
+		case OTHERS:							break;
+		case SPECIAL:							break;
 		default:
 			break;
 	}
@@ -172,22 +172,22 @@ static GtkResponseType check_if_overwriting_file (GtkWidget *window_parent,
 
 void open_cb (GtkAction *action, gpointer user_data)
 {
-	GtkWidget			*dialog;
+	GtkWidget		*dialog;
 	GtkResponseType		resp;
-	gchar 				*filename;
-	gchar 				*content;
+	gchar 			*filename;
+	gchar 			*content;
 	GtkTextBuffer 		*buffer;
-	GError 				*error = NULL;
+	GError 			*error = NULL;
 	struct window_main_widgets *wm;
 
 	wm = (struct window_main_widgets *) user_data;
 
 	dialog = gtk_file_chooser_dialog_new ("Select a file to open",
-										 GTK_WINDOW(wm->window1),
-										 GTK_FILE_CHOOSER_ACTION_OPEN,
-										 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-										 GTK_STOCK_OPEN, GTK_RESPONSE_OK,
-										 NULL);
+			 GTK_WINDOW(wm->window1),
+			 GTK_FILE_CHOOSER_ACTION_OPEN,
+			 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+			 GTK_STOCK_OPEN, GTK_RESPONSE_OK,
+			 NULL);
 
 	gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
@@ -228,11 +228,11 @@ void save_as_cb (GtkAction *action, gpointer user_data)
 	wm = (struct window_main_widgets *) user_data;
 
 	dialog = gtk_file_chooser_dialog_new ("Save File As ...",
-											GTK_WINDOW(wm->window1),
-											GTK_FILE_CHOOSER_ACTION_SAVE,
-											GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-											GTK_STOCK_SAVE, GTK_RESPONSE_OK,
-											NULL);
+			GTK_WINDOW(wm->window1),
+			GTK_FILE_CHOOSER_ACTION_SAVE,
+			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+			GTK_STOCK_SAVE, GTK_RESPONSE_OK,
+			NULL);
 
 	gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
