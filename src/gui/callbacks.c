@@ -109,13 +109,13 @@ void decode_cb (GtkWidget *widget, struct window_main_widgets *wm)
 
 	switch (idc[0])
 	{
-		case URL_URI: 			decode_url_uri (text, idc, wm);		break;
+		case URL_URI: 			decode_url_uri (text, idc, wm);	break;
 		case HTML_ENTITY: 		break;
-		case SPECIAL_ENCODING:	break;
-		case STRAIGHT_ENCODING:	break;
+		case SPECIAL_ENCODING:		break;
+		case STRAIGHT_ENCODING:		break;
 		case IE_SPECIFIC:		break;
 		case IP_SPECIFIC: 		break;
-		case HASH:				break;
+		case HASH:			break;
 		case OTHERS:			break;
 		case SPECIAL:			break;
 		default:
@@ -150,10 +150,10 @@ static GtkResponseType check_if_overwriting_file (GtkWidget *window_parent,
 			"\nDo you want to overwrite it with the one you are saving?";
 
 	dialog = gtk_message_dialog_new (GTK_WINDOW (window_parent),
-								   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-								   GTK_MESSAGE_WARNING,
-								   GTK_BUTTONS_OK_CANCEL,
-								   hint);
+			GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+			GTK_MESSAGE_WARNING,
+			GTK_BUTTONS_OK_CANCEL,
+			hint);
 
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
@@ -219,7 +219,7 @@ void open_cb (GtkAction *action, gpointer user_data)
 void save_as_cb (GtkAction *action, gpointer user_data)
 {
 	GtkWidget 		*dialog;
-	GtkResponseType	resp;
+	GtkResponseType		resp;
 	gchar 			*filename	= NULL;
 	gchar			*text		= NULL;
 	GError			*error		= NULL;
