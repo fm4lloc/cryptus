@@ -268,7 +268,7 @@ void about_cb (GtkAction *action, gpointer user_data)
 	};
 
 	const gchar license[] =
-			"Copyright (C) 2014  Fernando Magalhães (Fm4lloc) <fernando.magalhaes12@gmail.com>\n"
+			"Copyright (C) 2014  Fernando Magalhães (Fm4lloc) <fm4lloc@gmail.com>\n"
 			"\n"
 			"This program is free software: you can redistribute it and/or modify\n"
 			"it under the terms of the GNU General Public License as published by\n"
