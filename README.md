@@ -1,7 +1,7 @@
 # cryptus [in progress]
 A simple encoder in C
 
-Cryptus is a simple encoder written in C. It has several tools for working with texts.
+Cryptus is a simple encoder written in C. It has several tools for working with strings.
 
 Available tools:
 
@@ -30,3 +30,5 @@ Available tools:
 1. install dependencies: build-essential pkg-config libgtk2.0-dev libgdk-pixbuf2.0-dev libssl-dev
 
 2. compile: make
+
+3. execute: ./cryptus
